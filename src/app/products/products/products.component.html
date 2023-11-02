@@ -1,23 +1,41 @@
-<mat-card>
+<mat-card class="min-width">
   <mat-card-content>
     <mat-toolbar color="primary">Produtos</mat-toolbar>
     <div *ngIf="products$ | async as products; else loading">
       <table mat-table [dataSource]="products" class="mat-elevation-z8">
-        <ng-container matColumnDef="name">
+        <ng-container matColumnDef="name" class="full-width">
           <th mat-header-cell *matHeaderCellDef> Produto </th>
           <td mat-cell *matCellDef="let product"> {{ product.name }} </td>
         </ng-container>
 
-        <ng-container matColumnDef="barCode">
+        <ng-container matColumnDef="barCode" class="full-width">
           <th mat-header-cell *matHeaderCellDef> Código de Barras </th>
           <td mat-cell *matCellDef="let product"> {{ product.barCode }} </td>
         </ng-container>
 
-        <ng-container matColumnDef="price">
+        <ng-container matColumnDef="price" class="full-width">
           <th mat-header-cell *matHeaderCellDef> Preço </th>
           <td mat-cell *matCellDef="let product"> {{ product.price }} </td>
         </ng-container>
 
+        <ng-container matColumnDef="actions" class="full-width">
+          <th mat-header-cell *matHeaderCellDef class="action-column">
+            <button mat-mini-fab color="accent" aria-label="Adicionar um curso" class="action-column-header"
+              (click)="onAdd()">
+              <mat-icon>add</mat-icon>
+            </button>
+          </th>
+
+          <mat-cell *matCellDef="let course" class="action-column">
+            <button mat-icon-button color="primary" aria-label="Editar Curso">
+              <mat-icon>edit</mat-icon>
+            </button>
+
+            <button mat-icon-button color="warn" aria-label="Remover Curso">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
