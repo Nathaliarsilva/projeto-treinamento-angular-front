@@ -5,6 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 
 import { ProductsService } from '../services/products.service';
+import { Product } from '../model/product';
 
 @Component({
   selector: 'app-product-form',
@@ -23,11 +24,12 @@ export class ProductFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //const product: Product = this.route.snapshot.data['product'];
+    const product: Product = this.route.snapshot.data['product'];
     this.form = this.formBuilder.group({
-      name: [''],
-      barCode: [''],
-      price: []
+      id: [product.id],
+      name: [product.name],
+      barCode: [product.barCode],
+      price: [product.price]
     })
   }
 
@@ -41,12 +43,12 @@ export class ProductFormComponent implements OnInit {
     this.location.back();
   }
 
-  private onSuccess(){
-    this.snackBar.open("Produto cadastrado com sucesso!.", '', {duration: 5000});
+  private onSuccess() {
+    this.snackBar.open("Produto cadastrado com sucesso!.", '', { duration: 5000 });
     this.location.back();
   }
 
-  private onError(){
-    this.snackBar.open("Erro ao salvar o produto.", '', {duration: 5000});
+  private onError() {
+    this.snackBar.open("Erro ao salvar o produto.", '', { duration: 5000 });
   }
 }

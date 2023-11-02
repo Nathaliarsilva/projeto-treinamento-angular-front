@@ -10,7 +10,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { DialogErrorModule } from '../dialog-error/dialog-error.module';
+import { DialogErrorModule } from '../components/dialog-error/dialog-error.module';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductsRoutingModule } from './products-routing.module';
 import { ProductsComponent } from './products/products.component';
