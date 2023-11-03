@@ -1,27 +1,71 @@
-# ProjetoTreinamentoAngularMinsaitFront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
+# Projeto Angular do Treinamento da Minsait
 
-## Development server
+Projeto CRUD de produtos (Angular + SpringBoot).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## 🔗 Links
+[GITHUB FRONT - ANGULAR](https://github.com/Nathaliarsilva/projeto-treinamento-angular-front)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+[GITHUB BACK - JAVA](https://github.com/Nathaliarsilva/projeto-treinamento-angular-back)
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Documentação da API
 
-## Running end-to-end tests
+#### Retorna todos os produtos
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```http
+  GET /api/products
+```
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#### Retorna um produto
+
+```http
+  GET /api/products/{id}
+```
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `id`      | `number` | **Obrigatório**. O ID do produto|
+
+
+#### Cria um produto
+
+```http
+  POST /api/products
+```
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `id`      | `number` | **Obrigatório/AutoIncremento**. O ID do produto|
+| `name`      | `string` | Nome do produto|
+| `barCode`      | `string` | Código de barras do produto|
+| `price`      | `number` | Preço do produto|
+
+#### Altera um produto
+
+```http
+  PUT /api/products/{id}
+```
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `id`      | `number` | **Obrigatório**. O ID do produto|
+| `name`      | `string` | Nome do produto|
+| `barCode`      | `string` | Código de barras do produto|
+| `price`      | `number` | Preço do produto|
+
+#### Exclui um produto
+
+```http
+  DELETE /api/products{id}
+```
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `id`      | `number` | **Obrigatório**. O ID do produto|
+
+
